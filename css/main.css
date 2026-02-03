@@ -1,60 +1,79 @@
-body{
-    display: grid;
+body {
+  display: grid;
 }
-body{
-    grid-template-areas:
+body {
+  grid-template-areas:
+   /*". logo ."*/
     "header header header"
     "main main main"
-    "footer footer footer"
+    "footer footer footer";
 }
+
 /*HEADER*/
-header{
-    grid-area: header;
-    background-color:darkkhaki;
-    flex-direction: column;
+header {
+  grid-area: header;
+  background-color: darkkhaki;
+  flex-direction: column;
+}
+nav {
+  display: flex;
+  justify-content: center;
+}
+ul {
+  justify-content: space-between;
+  grid-area: list;
+  list-style: none;
+  display: flex;
+  padding: 0%;
+}
+li {
+  margin-right: 10rem;
 }
 
-ul{
-    grid-area: list;
-    list-style: none;
-    display:flex
+.bl-pos {
+  display: flex;
+  justify-self: center;
 }
- li{
-    margin-left: 6rem;;
- }
 
-/*body*/
-body{
-    grid-area: body;
+/*BODY*/
+body {
+  grid-area: body;
 }
+section {
+  display: flex;
+}
+
 /*footer*/
-footer{
-    grid-area: footer;
-    background-color: darkorange;
-    margin-top: 1 rem;
+footer {
+  grid-area: footer;
+  background-color: darkorange;
+  margin-top: 1rem;
 }
-
 
 /* logo size*/
-.logo{
-    width:10%
+.logo {
+  width: 30vw;
 }
 
 /*images sizes*/
-.poster{
-    width: 25%
+.poster {
+  width: 80%;
 }
-.photos{
-    width: 70%
+.photos {
+  width: 100%;
 }
-.print-front{
-    width: 25%
+.print-front {
+  width: 50%;
 }
-.photo-front{
-    width:25%
+.photo-front {
+  width: 50%;
 }
 
 /*shopping cart icon*/
-.bag-icon{
-    width: 80%
+.bag-icon {
+    width: 100%;
+}
+.shop-position{
+    align-self: center;
+    margin-left: 25rem;
 }
