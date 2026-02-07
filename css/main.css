@@ -1,63 +1,102 @@
 body {
   display: grid;
-}
-body {
+  margin: 0;
   grid-template-areas:
-   /*". logo ."*/
-    "header header header"
+  "header header header"
     "main main main"
+    "left . right"
     "footer footer footer";
 }
 
-/*HEADER*/
+/* HEADER */
+
 header {
   grid-area: header;
-  background-color: darkkhaki;
+  background-color: white;
   flex-direction: column;
+  position: sticky;
+  top: 0
 }
-nav {
-  display: flex;
-  justify-content: center;
-}
+
 ul {
-  justify-content: space-between;
+  justify-content: space-around;
   grid-area: list;
   list-style: none;
   display: flex;
   padding: 0%;
+  background-color: darkcyan;
 }
 li {
-  margin-right: 10rem;
+  margin-right: 1rem;
+  list-style: none;
 }
+
 
 .bl-pos {
   display: flex;
   justify-self: center;
 }
 
-/*BODY*/
+/* BODY */
+
 body {
-  grid-area: body;
+  grid-area: main;
 }
 section {
   display: flex;
 }
 
-/*footer*/
+h1{
+  display: flex;
+  justify-content: center;
+  margin-left: 30vw;  
+}
+.falafel{
+  display: flex;
+  justify-content:space-between;
+}
+.info{
+  justify-self: center;
+}
+
+.lalala{
+  display:grid;
+  grid-template-columns: 1fr;
+
+}
+
+@media screen and (min-width: 450px) {
+  .lalala{
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1vw
+  }
+}
+
+@media screen and(min-width: 700px) {
+.lalala{
+  grid-template-columns: repeat(3, 1fr)
+}
+}
+
+/* FOOTER */
 footer {
   grid-area: footer;
   background-color: darkorange;
-  margin-top: 1rem;
+  margin-top: 5rem;
+}
+small{
+  display:flex;
+  justify-content: center;
 }
 
 /* logo size*/
 .logo {
-  width: 30vw;
+  width: 20vw;
 }
 
-/*images sizes*/
+/* IMAGES SIZES */
 .poster {
-  width: 80%;
+  width: 90%;
 }
 .photos {
   width: 100%;
@@ -68,12 +107,11 @@ footer {
 .photo-front {
   width: 50%;
 }
+.photolist {
+  gap: 1rem;
+}
 
 /*shopping cart icon*/
 .bag-icon {
-    width: 100%;
-}
-.shop-position{
-    align-self: center;
-    margin-left: 25rem;
+  width: 70%;
 }
