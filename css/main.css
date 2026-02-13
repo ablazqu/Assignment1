@@ -2,9 +2,8 @@ body {
   display: grid;
   margin: 0;
   grid-template-areas:
-  "header header header"
+    "header header header"
     "main main main"
-    "left . right"
     "footer footer footer";
 }
 
@@ -15,28 +14,34 @@ header {
   background-color: white;
   flex-direction: column;
   position: sticky;
-  top: 0
+  top: 0;
 }
 
 ul {
-  justify-content: space-around;
+  justify-content: center;
+  gap: 80px;
   grid-area: list;
   list-style: none;
   display: flex;
   padding: 0%;
-  background-color: darkcyan;
 }
 li {
   margin-right: 1rem;
   list-style: none;
 }
 
-
 .bl-pos {
   display: flex;
   justify-self: center;
 }
 
+.roboto-shortcuts {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
 /* BODY */
 
 body {
@@ -45,37 +50,62 @@ body {
 section {
   display: flex;
 }
+.post-1 {
+  width: 25%;
+}
 
-h1{
-  display: flex;
-  justify-content: center;
-  margin-left: 30vw;  
-}
-.falafel{
-  display: flex;
-  justify-content:space-between;
-}
-.info{
+h1 {
   justify-self: center;
 }
 
-.lalala{
-  display:grid;
-  grid-template-columns: 1fr;
 
+.lexend-title{
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.price-page {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.price-info {
+  display: flexbox;
+}
+
+.falafel {
+  display: flex;
+  justify-content: space-between;
+}
+.info {
+  justify-self: center;
+}
+
+.collection {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
 }
 
 @media screen and (min-width: 450px) {
-  .lalala{
-    grid-template-columns: 1fr 1fr;
-    column-gap: 1vw
+  .collection {
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1vw;
   }
 }
 
 @media screen and(min-width: 700px) {
-.lalala{
-  grid-template-columns: repeat(3, 1fr)
+  .collection {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
+
+.form {
+  justify-content: center;
 }
 
 /* FOOTER */
@@ -84,8 +114,8 @@ footer {
   background-color: darkorange;
   margin-top: 5rem;
 }
-small{
-  display:flex;
+small {
+  display: flex;
   justify-content: center;
 }
 
@@ -96,19 +126,7 @@ small{
 
 /* IMAGES SIZES */
 .poster {
-  width: 90%;
-}
-.photos {
-  width: 100%;
-}
-.print-front {
-  width: 50%;
-}
-.photo-front {
-  width: 50%;
-}
-.photolist {
-  gap: 1rem;
+  width: 80%;
 }
 
 /*shopping cart icon*/
