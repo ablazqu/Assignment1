@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blaz</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="css/main.css" />
+    <!-- JAVASCRIPT -->
+    <script src="js/script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,7 +17,10 @@
   </head>
   <body>
     <header>
-      <div class="bl-pos">
+      <!-- laptop navigation  -->
+
+       <div class="laptop-navigation">    
+      <div class="logo-position">
         <a href="index.html"
           ><img class="logo" src="img/logoblaz.png" alt="blaz"
         /></a>
@@ -23,7 +29,6 @@
         <ul class="roboto-shortcuts">
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="contact.html">Contact</a></li>
           <li>
             <a href="shopping-cart.html"
               ><img class="bag-icon" src="img/bag-icon.png" alt="shopping cart"
@@ -31,6 +36,32 @@
           </li>
         </ul>
       </nav>
+    </div> 
+
+
+      <!-- mobile navigation-->
+      <!-- burger menu + logo + shop icon-->
+      <nav>
+        <div class="mobile-navigation">
+          <!-- shortcuts-->
+          <div class="hamburger-menu">
+            <img class="menu-icon" src="img/burger-icon.png" alt="close" />
+            <ul class="links">
+              <li class="roboto-shortcuts"><a href="index.html">Home</a></li>
+              <li class="roboto-shortcuts"><a href="products.html">Products</a></li>
+            </ul>
+          </div>
+          <!--logo-->
+          <a href="index.html"
+            ><img class="logo" src="img/logoblaz.png" alt="blaz"
+          /></a>
+          <!--cart icon-->
+          <a href="shopping-cart.html"
+            ><img class="bag-icon" src="img/bag-icon.png" alt="shopping cart"
+          /></a>
+        </div>
+      </nav>
+      <!-- end of mobile navigation-->
     </header>
     <main>
       <div class="price-page">
