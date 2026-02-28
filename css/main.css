@@ -1,8 +1,6 @@
 body {
   display: grid;
   margin: 0;
-  /*grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;*/
   grid-template-areas:
     "header header header"
     ". main . "
@@ -28,7 +26,6 @@ ul {
   padding: 0%;
 }
 li {
-  /*margin-right: 1rem;*/
   list-style: none;
 }
 
@@ -48,7 +45,6 @@ li {
 /* BODY */
 
 body {
-  /* grid-area: main;*/
   background-color: rgb(235, 232, 164);
 }
 section {
@@ -137,6 +133,14 @@ ol {
   color: rgb(22, 24, 24);
 }
 
+.quicksand-txt1 {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: rgb(22, 24, 24);
+  text-align: center;
+}
 /* FOOTER */
 footer {
   grid-area: footer;
@@ -171,22 +175,8 @@ small {
 .mobile-navigation {
   display: none;
 }
-@media screen and (min-width: 400px) and (max-width: 900px) {
-  .collection {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: main;
-    gap: 5px;
-  }
-  .poster {
-    display: flex;
-    justify-content: center;
-    width: 110%;
-  }
-  .product1 {
-    width: 70%;
-    margin-left: 5rem;
-  }
+@media screen and (min-width: 300px) and (max-width: 900px) {
+  /* HEADER FOR DIFFERENT SCREEN'S SIZE */
   .mobile-navigation {
     display: flex;
     justify-content: space-evenly;
@@ -218,8 +208,45 @@ small {
     display: none;
   }
 
-  /* .quicksand-txt{
-      display: flex;
-     justify-self: center;
-  }*/
+  /* PRODUCTS AND SHOPPING PAGES */
+  .collection {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: main;
+    gap: 5px;
+  }
+  .poster {
+    display: flex;
+    justify-content: center;
+    width: 110%;
+  }
+
+  .price-page {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 50%;
+  }
+
+  .product1 {
+    width: 100%;
+  }
+
+  .price-info .lexend-titles {
+    font-size: 30px;
+  }
+  .price-info .quicksand-txt {
+    font-size: auto;
+  }
+  .price-info .quicksand-txt1 {
+    font-size: 20px;
+  }
+}
+input {
+  width: 20%;
+}
+
+.shopping-buttons {
+  display: flex;
+  width: 100%;
 }
