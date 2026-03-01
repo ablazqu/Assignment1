@@ -47,7 +47,7 @@ https://chatgpt.com/c/69a2d1a7-16a0-8393-a7fc-640a1180baf1 */
 
 /* CREATING THE NEEDED SO POSTERS WOULD APPEAR IN THE SHOPPING CART */
 
-let posterWanted = documen.getElementByClassName("buy-button");
+let posterWanted = document.getElementsByClassName("buy-button");
 
 let shoppingArr;
 
@@ -67,5 +67,9 @@ function saveToBuy() {
     img: this.dataset.img,
   };
 
+  shoppingArr.push(desiredPoster);
+
   localStorage.shopping = JSON.stringify(shoppingArr);
+
+  console.log("product added" + desiredPoster);
 }

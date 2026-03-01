@@ -44,9 +44,9 @@ li {
 }
 /* BODY */
 
-body {
+/*body {
   background-color: rgb(235, 232, 164);
-}
+}*/
 section {
   display: flex;
 }
@@ -67,9 +67,20 @@ h1 {
 
 /*index*/
 .main-carrusel {
-  display: flex;
+  /*display: flex;*/
   justify-self: center;
+  width: 20%;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
 }
+.main-carrusel img {
+  padding: 10px;
+}
+
+/*  reference for the scroll
+https://www.w3schools.com/howto/howto_css_image_gallery_scroll.asp
+*/
 
 .carrusel {
   width: 80%;
@@ -171,7 +182,16 @@ small {
   width: 70%;
 }
 
-/* responsive */
+input {
+  width: 20%;
+}
+
+.shopping-buttons {
+  display: flex;
+  width: 100%;
+}
+
+/* RESPONSIVE */
 .mobile-navigation {
   display: none;
 }
@@ -209,6 +229,9 @@ small {
   }
 
   /* PRODUCTS AND SHOPPING PAGES */
+  .main-carrusel {
+    width: 100%;
+  }
   .collection {
     display: grid;
     grid-template-columns: 1fr;
@@ -241,12 +264,4 @@ small {
   .price-info .quicksand-txt1 {
     font-size: 20px;
   }
-}
-input {
-  width: 20%;
-}
-
-.shopping-buttons {
-  display: flex;
-  width: 100%;
 }
