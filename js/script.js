@@ -16,6 +16,22 @@ function displayBurgerMenu() {
  https://www.youtube.com/watch?v=pBv7igaxfQE
  https://www.youtube.com/watch?v=aNDqzlAKmZc */
 
+/* DISPLAY FOR THE CONTACT BUTTON */
+
+const button = document.querySelector(".show-contact");
+const p = document.querySelector(".email");
+
+p.style.display = "none";
+
+button.addEventListener("click", showEmail);
+function showEmail() {
+  if (p.style.display === "none") {
+    p.style.display = "flex";
+  } else {
+    p.style.display = "none";
+  }
+}
+
 /* ADDING AND RESTING PRODUCTS TO THE SHOPPING CART PAGE */
 
 const reduceButton = document.querySelector(".reduce-button");

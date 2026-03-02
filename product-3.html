@@ -6,12 +6,20 @@
     <title>Blaz</title>
     <!-- CSS -->
     <link rel="stylesheet" href="css/main.css" />
-    <!-- JAVASCRIPT -->
+    <!-- JavaScript-->
     <script src="js/script.js" defer></script>
+    <!--roboto font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -19,28 +27,29 @@
     <header>
       <!-- laptop navigation  -->
 
-       <div class="laptop-navigation">    
-      <div class="logo-position">
-        <a href="index.html"
-          ><img class="logo" src="img/logoblaz.png" alt="blaz"
-        /></a>
+      <div class="laptop-navigation">
+        <div class="logo-position">
+          <a href="index.html"
+            ><img class="logo" src="img/logoblaz.png" alt="blaz"
+          /></a>
+        </div>
+        <nav>
+          <ul class="roboto-shortcuts">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li>
+              <a href="shopping.html"
+                ><img
+                  class="bag-icon"
+                  src="img/bag-icon.png"
+                  alt="shopping cart"
+              /></a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav>
-        <ul class="roboto-shortcuts">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li>
-            <a href="shopping.html"
-              ><img class="bag-icon" src="img/bag-icon.png" alt="shopping cart"
-            /></a>
-          </li>
-        </ul>
-      </nav>
-    </div> 
-
 
       <!-- mobile navigation-->
-      <!-- burger menu + logo + shop icon-->
       <nav>
         <div class="mobile-navigation">
           <!-- shortcuts-->
@@ -48,9 +57,12 @@
             <img class="menu-icon" src="img/burger-icon.png" alt="close" />
             <ul class="links">
               <li class="roboto-shortcuts"><a href="index.html">Home</a></li>
-              <li class="roboto-shortcuts"><a href="products.html">Products</a></li>
+              <li class="roboto-shortcuts">
+                <a href="products.html">Products</a>
+              </li>
             </ul>
           </div>
+          <div class="logo-plus-bagIcon">
           <!--logo-->
           <a href="index.html"
             ><img class="logo" src="img/logoblaz.png" alt="blaz"
@@ -59,24 +71,34 @@
           <a href="shopping.html"
             ><img class="bag-icon" src="img/bag-icon.png" alt="shopping cart"
           /></a>
+          </div>
         </div>
       </nav>
       <!-- end of mobile navigation-->
     </header>
     <main>
        <div class="price-page">
-       <img class="post-1" src="img/tumecompletas.jpg" alt="you-comeplete-me">
+       <img class="product1" src="img/tumecompletas.jpg" alt="you-comeplete-me">
        <div class="price-info">
        <h1 class="lexend-titles">You complete me</h1>       
-       <p>80 SEK</p>
-       <p>Digital poster printed in 300 gr paper</p>
-       <p>size: 30 x 45 cm</p>
-       <input type="submit" value="-">
-           <input type="text" value="1">
-            <input type="submit" value="+">
-       <input type="submit" value="add to cart">
+       <p class="quicksand-txt-price">80 SEK</p>
+       <p class="quicksand-txt-info">Digital poster printed in 300 gr paper</p>
+       <p class="quicksand-txt-info">size: 30 x 45 cm</p>
+         <div class="shopping-buttons">
+            <button type="button" class="reduce-button">-</button>
+            <input class="amount" type="text" value="1" />
+            <button class="increase-button">+</button>
+            <button class="buy-button">add</button>
+          </div>
        </div>
       </div>
+        <ol class="quicksand-txt">
+        <li><a href="https://www.instagram.com/blazz._/"> @blazz._</a></li>
+          <div>
+        <li> <button class="show-contact">Contact</button>
+        <p class="email">ablazaravena@gmail.com</p> </li>             
+        </div>
+      </ol>
     </main>
     <footer>
        <small>&copy; 2026 Antonia Blazquez</small> 

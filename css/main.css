@@ -43,17 +43,6 @@ li {
   font-size: 20px;
 }
 /* BODY */
-
-/*body {
-  background-color: rgb(235, 232, 164);
-}*/
-section {
-  display: flex;
-}
-
-.post-1 {
-  width: 25%;
-}
 h1 {
   text-align: center;
 }
@@ -65,34 +54,67 @@ h1 {
   font-style: normal;
 }
 
-/*index*/
+.quicksand-txt {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: rgb(62, 63, 63);
+}
+
+/* INDEX PAGE */
 .main-carrusel {
-  /*display: flex;*/
   justify-self: center;
-  width: 20%;
+  width: 50%;
   overflow: auto;
   white-space: nowrap;
   padding: 10px;
 }
 .main-carrusel img {
+  width: 40%;
   padding: 10px;
 }
 
-/*  reference for the scroll
+/*  reference for the scrolling gallery
 https://www.w3schools.com/howto/howto_css_image_gallery_scroll.asp
 */
 
 .carrusel {
   width: 80%;
-  gap: 0;
 }
 
 ol {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-top: 5rem;
 }
 
-/*product pages*/
+.show-contact {
+  background: none;
+  border: none;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: rgb(22, 24, 24);
+}
+.email {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: italic;
+  color: rgb(22, 24, 24);
+}
+/* ALL PRODUCTS PAGE */
+.collection {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+/* EACH PRODUCT PAGE */
+
 .price-page {
   display: flex;
   justify-content: center;
@@ -103,7 +125,16 @@ ol {
   display: flexbox;
 }
 
-/*contact page*/
+.shopping-buttons {
+  display: flex;
+  width: 100%;
+}
+
+input {
+  width: 20%;
+}
+
+/* CONTACT PAGE */
 .form {
   display: flexbox;
   text-align: center;
@@ -118,40 +149,31 @@ ol {
   justify-self: center;
   margin-top: 5px;
 }
-/* all products page*/
-.collection {
-  justify-content: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+
+.quicksand-txt-price {
+  font-family: "Quicksand", sans-serif;
+  font-size: xx-large;
+  font-weight: 300;
+  font-style: normal;
+  color: olive;
+  text-align: center;
 }
 
-/* shopping cart page */
+.quicksand-txt-info {
+  font-family: "Quicksand", sans-serif;
+  font-size: large;
+  font-weight: 300;
+  font-style: normal;
+  color: rgb(22, 24, 24);
+  text-align: left;
+}
+
+/* SHOPPING CART PAGE */
 .shop-info {
   display: flex;
   justify-content: space-evenly;
 }
 
-.form {
-  justify-content: center;
-}
-
-.quicksand-txt {
-  font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  color: rgb(22, 24, 24);
-}
-
-.quicksand-txt1 {
-  font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  color: rgb(22, 24, 24);
-  text-align: center;
-}
 /* FOOTER */
 footer {
   grid-area: footer;
@@ -163,7 +185,7 @@ small {
   justify-content: center;
 }
 
-/* logo size*/
+/* LOGO SIZE */
 .logo {
   width: 20vw;
 }
@@ -177,42 +199,42 @@ small {
   width: 30%;
 }
 
-/*shopping cart icon*/
+/* SHOPPING CART ICON */
 .bag-icon {
-  width: 70%;
-}
-
-input {
-  width: 20%;
-}
-
-.shopping-buttons {
-  display: flex;
-  width: 100%;
+  width: 90%;
 }
 
 /* RESPONSIVE */
+
 .mobile-navigation {
   display: none;
 }
-@media screen and (min-width: 300px) and (max-width: 900px) {
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
   /* HEADER FOR DIFFERENT SCREEN'S SIZE */
   .mobile-navigation {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: first baseline;
+    margin: 0;
+    padding: 0;
+    gap: 0;
   }
 
   .hamburger-menu {
-    width: 10rem;
+    width: 40%;
   }
   .menu-icon {
     width: 50%;
-    justify-self: right;
-    margin: 0;
-    padding: 0;
+    justify-self: left;
   }
   .bag-icon {
-    width: 90%;
+    display: flex;
+    justify-self: right;
+    width: 100%;
+  }
+  .logo-plus-bagIcon {
+    display: flex;
+    gap: 5rem;
   }
 
   ul {
@@ -224,14 +246,27 @@ input {
     flex-direction: column;
     padding: 0%;
   }
+
   .laptop-navigation {
     display: none;
   }
 
-  /* PRODUCTS AND SHOPPING PAGES */
+  /* INDEX */
+
   .main-carrusel {
-    width: 100%;
+    justify-self: center;
+    width: 70%;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
   }
+  .main-carrusel img {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* PRODUCTS AND SHOPPING PAGES */
+
   .collection {
     display: grid;
     grid-template-columns: 1fr;
@@ -245,10 +280,110 @@ input {
   }
 
   .price-page {
+    margin: 0;
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    /*gap: 5rem;*/
     width: 50%;
+    margin-left: 20%;
+  }
+
+  .product1 {
+    width: 100%;
+  }
+
+  .price-info .lexend-titles {
+    font-size: large;
+  }
+  .price-info .quicksand-txt-price {
+    font-size: larger;
+  }
+  .price-info .quicksand-txt-info {
+    font-size: smaller;
+  }
+  .shopping-buttons {
+    width: 200%;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  /* HEADER FOR DIFFERENT SCREEN'S SIZE */
+  .mobile-navigation {
+    display: flex;
+    justify-content: first baseline;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+
+  .hamburger-menu {
+    width: 40%;
+  }
+  .menu-icon {
+    width: 50%;
+    justify-self: left;
+  }
+  .bag-icon {
+    display: flex;
+    justify-self: end;
+    width: 100%;
+  }
+  .logo-plus-bagIcon {
+    display: flex;
+    gap: 10rem;
+  }
+
+  ul {
+    justify-content: center;
+    gap: 8px;
+    grid-area: list;
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    padding: 0%;
+  }
+
+  .laptop-navigation {
+    display: none;
+  }
+
+  /* INDEX */
+
+  .main-carrusel {
+    justify-self: center;
+    width: 90%;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+  }
+  .main-carrusel img {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* PRODUCTS AND SHOPPING PAGES */
+
+  .collection {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: main;
+    gap: 5px;
+  }
+  .poster {
+    display: flex;
+    justify-content: center;
+    width: 110%;
+  }
+
+  .price-page {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*gap: 5rem;*/
+    width: 50%;
+    margin-left: 20%;
   }
 
   .product1 {
@@ -258,10 +393,10 @@ input {
   .price-info .lexend-titles {
     font-size: 30px;
   }
-  .price-info .quicksand-txt {
-    font-size: auto;
+  .price-info .quicksand-txt-price {
+    font-size: larger;
   }
-  .price-info .quicksand-txt1 {
-    font-size: 20px;
+  .price-info .quicksand-txt-info {
+    font-size: smaller;
   }
 }
