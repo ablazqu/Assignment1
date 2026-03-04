@@ -150,7 +150,7 @@ input {
   margin-top: 5px;
 }
 
-.quicksand-txt-price {
+#quicksand-txt-price {
   font-family: "Quicksand", sans-serif;
   font-size: xx-large;
   font-weight: 300;
@@ -173,7 +173,29 @@ input {
   display: flex;
   justify-content: space-evenly;
 }
+.shopping-products {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Quicksand", sans-serif;
+  font-size: large;
+  font-weight: 300;
+  font-style: normal;
+  color: rgb(22, 24, 24);
+  text-align: left;
+}
 
+#copiePrice {
+  font-family: "Quicksand", sans-serif;
+  font-size: large;
+  font-weight: 300;
+  font-style: normal;
+  color: rgb(22, 24, 24);
+  text-align: left;
+}
+h3 {
+  display: flex;
+  justify-content: center;
+}
 /* FOOTER */
 footer {
   grid-area: footer;

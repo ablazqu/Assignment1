@@ -17,7 +17,6 @@ function displayBurgerMenu() {
  https://www.youtube.com/watch?v=aNDqzlAKmZc */
 
 /* DISPLAY FOR THE CONTACT BUTTON */
-
 const button = document.querySelector(".show-contact");
 const p = document.querySelector(".email");
 
@@ -32,13 +31,12 @@ function showEmail() {
   }
 }
 
-/* ADDING AND RESTING PRODUCTS TO THE SHOPPING CART PAGE */
-
+/* AMOUNT OF COPIES */
 const reduceButton = document.querySelector(".reduce-button");
 const increaseButton = document.querySelector(".increase-button");
-const addingToCartButton = document.querySelector(".buy-button");
 const amountNumber = document.querySelector(".amount");
 
+/* Reducing copies */
 reduceButton.addEventListener("click", reducingCopies);
 
 function reducingCopies() {
@@ -48,44 +46,70 @@ function reducingCopies() {
   }
 }
 
+/* Increasing copies */
 increaseButton.addEventListener("click", increaseCopies);
 function increaseCopies() {
   let numberOfCopies = parseInt(amountNumber.value, 10 || 1);
   amountNumber.value = numberOfCopies + 1;
 }
 
-addingToCartButton.addEventListener("click", addedToCart);
-
-function addedToCart() {}
-
 /* REFERENCE FOR CHATGPT HELP!
 https://chatgpt.com/c/69a2d1a7-16a0-8393-a7fc-640a1180baf1 */
 
 /* CREATING THE NEEDED SO POSTERS WOULD APPEAR IN THE SHOPPING CART */
 
-let posterWanted = document.getElementsByClassName("buy-button");
+/* 
+we need:
+- to create an array where to storage the info for each product we want to buy
+- an eventlistener so when we click the product would appear in the shopping page as part of the array
+- to create and object with the data from the product. 
+- to make a loop so the array would iterate
+- retrieve values, use JSON, parse, DOM, etc
+ */
 
-let shoppingArr;
+/* create an empty array where product would be storage*/
+
+let cartArray;
+
+
+/* making it exist in the local storage */
 
 if (localStorage.shopping) {
-  shoppingArr = JSON.parse(localStorage.shopping);
+  cartArray = JSON.parse(localStorage.shopping);
 } else {
-  shoppingArr = [];
+  cartArray = [];
 }
 
-for (let i = 0; i < posterWanted.length; i++) {
-  posterWanted[i].addEventListener("click", saveToBuy);
-}
+/* make the button clickable */
 
-function saveToBuy() {
-  let desiredPoster = {
-    id: this.dataset.id,
-    img: this.dataset.img,
+const buyButton = document.querySelector(".buy-button");
+
+buyButton.addEventListener("click", addToCart);
+
+/* creating the function so it works */
+function addToCart() {
+  const picture = document.querySelector(".product1").src; /* image */
+  const price = document.querySelector("#quicksand-txt-price").innerText; /* price */
+  const copies = parseInt(document.querySelector(".amount").value); /* amount */
+  const amountPrice= parseInt(document.querySelector("#quicksand-txt-price").innerText.replace(' SEK', '')) *copies
+  /* creating the object with the product info */
+  let posterObj = {
+    image: picture,
+    price: price,
+    amount: copies,
+    amountPrice: amountPrice,
   };
 
-  shoppingArr.push(desiredPoster);
+  /* preventing to have the same product many times */
+  for (let i = 0; i < cartArray.length; i++) {
+    if (picture === cartArray[i].image) {
+      cartArray.splice(i, 1);
+    }
+  }
 
-  localStorage.shopping = JSON.stringify(shoppingArr);
-
-  console.log("product added" + desiredPoster);
+  cartArray.push(posterObj);
+  localStorage.shopping = JSON.stringify(cartArray);
 }
+/* retrieving the array (we can see it) */
+
+localStorage.shopping = JSON.stringify(cartArray)
