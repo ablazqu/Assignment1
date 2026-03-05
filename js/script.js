@@ -71,7 +71,6 @@ we need:
 
 let cartArray;
 
-
 /* making it exist in the local storage */
 
 if (localStorage.shopping) {
@@ -82,22 +81,28 @@ if (localStorage.shopping) {
 
 /* make the button clickable */
 
-const buyButton = document.querySelector(".buy-button");
+const buyButton = document.querySelectorAll(".buy-button");
 
-buyButton.addEventListener("click", addToCart);
+/* making possible to add more than one product */
 
+for ( let i=0; i< buyButton.length; i++){
+buyButton[i].addEventListener("click", addToCart);
+}
 /* creating the function so it works */
-function addToCart() {
-  const picture = document.querySelector(".product1").src; /* image */
-  const price = document.querySelector("#quicksand-txt-price").innerText; /* price */
+function addToCart(event) {
+
+  const button= event.target;
+  const product=button.closest(".price-page");
+
+  const picture = product.querySelector(".product1").src; /* image */
+  const price = parseInt(document.querySelector(".quicksand-txt-price").innerText.replace(" SEK", "")); /* price */
   const copies = parseInt(document.querySelector(".amount").value); /* amount */
-  const amountPrice= parseInt(document.querySelector("#quicksand-txt-price").innerText.replace(' SEK', '')) *copies
+
   /* creating the object with the product info */
   let posterObj = {
-    image: picture,
-    price: price,
-    amount: copies,
-    amountPrice: amountPrice,
+    image:picture,
+    price:price,
+    amount:copies,
   };
 
   /* preventing to have the same product many times */
@@ -110,6 +115,8 @@ function addToCart() {
   cartArray.push(posterObj);
   localStorage.shopping = JSON.stringify(cartArray);
 }
-/* retrieving the array (we can see it) */
+ 
 
-localStorage.shopping = JSON.stringify(cartArray)
+
+
+/* retrieving the array (we can see it) */
