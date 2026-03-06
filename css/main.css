@@ -175,23 +175,29 @@ input {
 }
 .shopping-products {
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr 1fr;
+  grid-template-columns: 1px 100px 200px 140px 90px;
   align-items: center;
-  gap: 0;
-  width: 100%;
+  justify-content: space-evenly;
   font-family: "Quicksand", sans-serif;
   font-size: large;
   font-weight: 300;
   font-style: normal;
   color: rgb(22, 24, 24);
   text-align: center;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 .final-price {
   display: flex;
   justify-content: center;
   gap: 30px;  
+  align-items: center;
+}
+
+.total-price{
+    font-family: "Quicksand", sans-serif;
+  font-optical-sizing: large;
+  font-weight: 300;
+  font-style: normal;
+  color: rgb(18, 18, 18);
 }
 
 /* FOOTER */
@@ -325,6 +331,21 @@ small {
   .shopping-buttons {
     width: 200%;
   }
+
+
+  /* CART PAGE*/
+  .shopping-products {
+  display: grid;
+  grid-template-columns: 30px 60px 100px 50px 60px;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: "Quicksand", sans-serif;
+  font-size: large;
+  font-weight: 300;
+  font-style: normal;
+  color: rgb(22, 24, 24);
+  text-align: center;
+}
 }
 
 @media screen and (min-width: 600px) and (max-width: 900px) {
@@ -419,4 +440,17 @@ small {
   .price-info .quicksand-txt-info {
     font-size: smaller;
   }
+
+  /* CART PAGE */
+   .shopping-products {
+  display: grid;
+  grid-template-columns: 30px 60px 100px 50px 60px;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: "Quicksand", sans-serif;
+  font-size: large;
+  font-weight: 300;
+  font-style: normal;
+  color: rgb(22, 24, 24);
+  text-align: center;
 }

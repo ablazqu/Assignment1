@@ -60,11 +60,13 @@ https://chatgpt.com/c/69a2d1a7-16a0-8393-a7fc-640a1180baf1 */
 
 /* 
 we need:
-- to create an array where to storage the info for each product we want to buy
-- an eventlistener so when we click the product would appear in the shopping page as part of the array
-- to create and object with the data from the product. 
-- to make a loop so the array would iterate
-- retrieve values, use JSON, parse, DOM, etc
+- to create an array where to storage the info for each product we want to buy  --- DONE ---
+- an eventlistener so when we click the product would appear in the shopping page as part of the array --- DONE---
+- to create and object with the data from the product. --- DONE --- 
+- to make a loop so the array would iterate --- DONE ---
+- retrieve values, use JSON, parse, DOM, etc --- DONE---
+- making them appear in a row. --- DONE ---
+- making it possible to remove products 
  */
 
 /* create an empty array where product would be storage*/
@@ -85,24 +87,28 @@ const buyButton = document.querySelectorAll(".buy-button");
 
 /* making possible to add more than one product */
 
-for ( let i=0; i< buyButton.length; i++){
-buyButton[i].addEventListener("click", addToCart);
+for (let i = 0; i < buyButton.length; i++) {
+  buyButton[i].addEventListener("click", addToCart);
 }
 /* creating the function so it works */
 function addToCart(event) {
-
-  const button= event.target;
-  const product=button.closest(".price-page");
+  const button = event.target;
+  const product = button.closest(".price-page");
 
   const picture = product.querySelector(".product1").src; /* image */
-  const price = parseInt(document.querySelector(".quicksand-txt-price").innerText.replace(" SEK", "")); /* price */
+  const price = parseInt(
+    document
+      .querySelector(".quicksand-txt-price")
+      .innerText.replace(" SEK", ""),
+  ); /* price */
   const copies = parseInt(document.querySelector(".amount").value); /* amount */
+
 
   /* creating the object with the product info */
   let posterObj = {
-    image:picture,
-    price:price,
-    amount:copies,
+    image: picture,
+    price: price,
+    amount: copies,
   };
 
   /* preventing to have the same product many times */
@@ -115,8 +121,5 @@ function addToCart(event) {
   cartArray.push(posterObj);
   localStorage.shopping = JSON.stringify(cartArray);
 }
- 
 
 
-
-/* retrieving the array (we can see it) */

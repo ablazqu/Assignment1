@@ -31,7 +31,7 @@ function showEmail() {
   }
 }
 
-/* ljh */
+/* making the products to appear in the shopping cart */
 
 const shopGrid = document.querySelector(".shopping-products");
 
@@ -40,24 +40,45 @@ let cartArray = JSON.parse(localStorage.getItem("shopping")) || [];
 let finalPrice = 0;
 
 for (let i = 0; i < cartArray.length; i++) {
+  /* for the image to appear */
   let buyProduct = document.createElement("img");
   buyProduct.src = cartArray[i].image;
-  buyProduct.style.width = "15%";
+  buyProduct.style.width = "80%";
+
+  /* for the price to appear*/
 
   let productInfo = document.createElement("p");
   productInfo.innerText = cartArray[i].price + " SEK";
 
+  /* for the amount of copies to appear */
   let copieAmount = document.createElement("input");
   copieAmount.value = cartArray[i].amount;
-  copieAmount.style.width = "10%";
+  copieAmount.style.width = "15%";
   copieAmount.style.height = "15%";
 
+  /* for the calculation between the amount of copies + how much would be that price */
   const amountPrice = document.createElement("p");
-
   let copiePrice = cartArray[i].price * cartArray[i].amount;
   amountPrice.innerText = copiePrice;
 
+  /* for the final price, after all the prices from the different products are put together */
   finalPrice += copiePrice;
+
+  /* for the remove button, so we can eliminate unwished products */
+  const removeButton = document.createElement("button");
+  removeButton.innerText = "X";
+  removeButton.style.width = "6%";
+  removeButton.addEventListener("click", deleteProduct);
+
+  function deleteProduct() {
+    cartArray.splice(i, 1);
+    localStorage.shopping = JSON.stringify(cartArray);
+    location.reload();
+  }
+
+  /* make them happen in the page */
+
+  shopGrid.appendChild(removeButton);
 
   shopGrid.appendChild(buyProduct);
   shopGrid.appendChild(productInfo);
@@ -66,12 +87,10 @@ for (let i = 0; i < cartArray.length; i++) {
 }
 
 /* what we need for the total price button */
-/*const priceGrid = document.querySelector(".final-price");*/
 
 const totalPrice = document.querySelector(".total-price");
-  totalPrice.innerText = finalPrice + "SEK";
+totalPrice.innerText = finalPrice + "SEK";
 
-
-/*priceGrid.appendChild(totalPrice);*/
-
-/*shopGrid.appendChild(totalPrice)*/
+/* reference for make it possible 
+https://chatgpt.com/c/69a83d7f-f540-832a-bb95-817cdb2929d6
+*/
