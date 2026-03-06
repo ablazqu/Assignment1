@@ -103,7 +103,6 @@ function addToCart(event) {
   ); /* price */
   const copies = parseInt(document.querySelector(".amount").value); /* amount */
 
-
   /* creating the object with the product info */
   let posterObj = {
     image: picture,
@@ -117,9 +116,6 @@ function addToCart(event) {
       cartArray.splice(i, 1);
     }
   }
-
   cartArray.push(posterObj);
   localStorage.shopping = JSON.stringify(cartArray);
 }
-
-

@@ -39,11 +39,22 @@ let cartArray = JSON.parse(localStorage.getItem("shopping")) || [];
 
 let finalPrice = 0;
 
+/* */
+
+let emptyCart = document.createElement("h4");
+emptyCart.textContent = "THIS IS EMPTY!";
+if (cartArray.length !== 0) {
+  emptyCart.style.display = "none";
+}
+shopGrid.appendChild(emptyCart);
+
+/* */
+
 for (let i = 0; i < cartArray.length; i++) {
   /* for the image to appear */
   let buyProduct = document.createElement("img");
   buyProduct.src = cartArray[i].image;
-  buyProduct.style.width = "80%";
+  buyProduct.style.width = "100%";
 
   /* for the price to appear*/
 
@@ -67,7 +78,7 @@ for (let i = 0; i < cartArray.length; i++) {
   /* for the remove button, so we can eliminate unwished products */
   const removeButton = document.createElement("button");
   removeButton.innerText = "X";
-  removeButton.style.width = "6%";
+  removeButton.style.width = "8%";
   removeButton.addEventListener("click", deleteProduct);
 
   function deleteProduct() {
@@ -77,7 +88,6 @@ for (let i = 0; i < cartArray.length; i++) {
   }
 
   /* make them happen in the page */
-
   shopGrid.appendChild(removeButton);
 
   shopGrid.appendChild(buyProduct);
@@ -85,8 +95,6 @@ for (let i = 0; i < cartArray.length; i++) {
   shopGrid.appendChild(copieAmount);
   shopGrid.appendChild(amountPrice);
 }
-
-/* what we need for the total price button */
 
 const totalPrice = document.querySelector(".total-price");
 totalPrice.innerText = finalPrice + "SEK";
