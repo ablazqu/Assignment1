@@ -1,9 +1,7 @@
-/* DISPLAY OF HAMBURGER MENU */
+/* --- DISPLAY OF HAMBURGER MENU --- */
 const hambugerMenu = document.querySelector(".menu-icon");
 const ul = document.querySelector(".links");
-
 hambugerMenu.addEventListener("click", displayBurgerMenu);
-
 function displayBurgerMenu() {
   if (ul.style.display === "none") {
     ul.style.display = "flex";
@@ -11,17 +9,11 @@ function displayBurgerMenu() {
     ul.style.display = "none";
   }
 }
-/* REFENCE CHATGPT AND YOUTUBE VIDEOS */
-/* https://chatgpt.com/c/69a18c6c-ba00-832b-bfcb-efa62e87b1c5
- https://www.youtube.com/watch?v=pBv7igaxfQE
- https://www.youtube.com/watch?v=aNDqzlAKmZc */
 
-/* DISPLAY FOR THE CONTACT BUTTON */
+/* --- DISPLAY FOR THE CONTACT BUTTON --- */
 const button = document.querySelector(".show-contact");
 const p = document.querySelector(".email");
-
 p.style.display = "none";
-
 button.addEventListener("click", showEmail);
 function showEmail() {
   if (p.style.display === "none") {
@@ -31,69 +23,68 @@ function showEmail() {
   }
 }
 
-/* AMOUNT OF COPIES */
+/* --- AMOUNT OF COPIES --- */
 const reduceButton = document.querySelector(".reduce-button");
 const increaseButton = document.querySelector(".increase-button");
 const amountNumber = document.querySelector(".amount");
 
-/* Reducing copies */
+//Reducing copies
 reduceButton.addEventListener("click", reducingCopies);
-
 function reducingCopies() {
   let numberOfCopies = parseInt(amountNumber.value, 10 || 1);
   if (numberOfCopies > 1) {
     amountNumber.value = numberOfCopies - 1;
   }
 }
-
-/* Increasing copies */
+//Increasing copies
 increaseButton.addEventListener("click", increaseCopies);
 function increaseCopies() {
   let numberOfCopies = parseInt(amountNumber.value, 10 || 1);
   amountNumber.value = numberOfCopies + 1;
 }
 
-/* REFERENCE FOR CHATGPT HELP!
-https://chatgpt.com/c/69a2d1a7-16a0-8393-a7fc-640a1180baf1 */
+/* REFERENCE: chat gpt help
+ https://chatgpt.com/c/69a2d1a7-16a0-8393-a7fc-640a1180baf1 */
 
-/* CREATING THE NEEDED SO POSTERS WOULD APPEAR IN THE SHOPPING CART */
 
-/* 
-we need:
-- to create an array where to storage the info for each product we want to buy  --- DONE ---
-- an eventlistener so when we click the product would appear in the shopping page as part of the array --- DONE---
-- to create and object with the data from the product. --- DONE --- 
-- to make a loop so the array would iterate --- DONE ---
-- retrieve values, use JSON, parse, DOM, etc --- DONE---
-- making them appear in a row. --- DONE ---
-- making it possible to remove products 
- */
-
-/* create an empty array where product would be storage*/
-
+/* --- CREATING THE NEEDED SO POSTERS WOULD APPEAR IN THE SHOPPING CART --- */
+// create an empty array where product would be storage
 let cartArray;
 
-/* making it exist in the local storage */
-
+// making it exist in the local storage
 if (localStorage.shopping) {
   cartArray = JSON.parse(localStorage.shopping);
 } else {
   cartArray = [];
 }
+updateWhatsInTheBag();
 
-/* make the button clickable */
-
+// making the "add to cart" button clickable
 const buyButton = document.querySelectorAll(".buy-button");
 
-/* making possible to add more than one product */
+// for when we have thing inside de cart (the icon show how many items we have inside)
+function updateWhatsInTheBag(){
+ const whatsInTheBag=document.querySelector(".bag-has-products");
+whatsInTheBag.textContent = cartArray.length
+if (cartArray.length > 0) {
+   whatsInTheBag.style.display="flex";
+}else{
+ whatsInTheBag.style.display="none";
+}
+}
 
+/* REFERENCE: chat gpt help
+https://chatgpt.com/c/69ab4b1f-cb34-832a-8844-62f8df1d7c75 */
+
+// making possible to add more than one product
 for (let i = 0; i < buyButton.length; i++) {
   buyButton[i].addEventListener("click", addToCart);
 }
-/* creating the function so it works */
+
+// creating the function so it works
 function addToCart(event) {
 
-  /* showing "ADDED TO CART" eveytime we add a new product*/
+  // showing "ADDED TO CART" eveytime we add a new product
   let message =document.createElement("h6"); 
   message.innerText = "ADDED TO CART";
   let showIt = document.querySelector(".added-message");
@@ -101,29 +92,35 @@ function addToCart(event) {
   function messageGone() {
     message.remove();
   }
-  showIt.appendChild(message); //the message would appear for 2 seconds
+  showIt.appendChild(message);
   
-/* here we are telling which and from where we want the information */
+ // here we are telling which and from where we want the information
   const button = event.target;
   const product = button.closest(".price-page"); // it will go to the closest ".price-page", so we get the right info
+  const picture = product.querySelector(".product1").src; // image 
+  const price = parseInt(document.querySelector(".quicksand-txt-price").innerText.replace(" SEK", "")); // price
+  const copies = parseInt(document.querySelector(".amount").value); // amount 
 
-  const picture = product.querySelector(".product1").src; /* image */
-  const price = parseInt(document.querySelector(".quicksand-txt-price").innerText.replace(" SEK", "")); /* price */
-  const copies = parseInt(document.querySelector(".amount").value); /* amount */
-
-  /* creating the object with the product info */
+ //creating the object with the product info 
   let posterObj = {
     image: picture,
     price: price,
     amount: copies,
   };
 
-  /* preventing to have the same product many times */
+  // preventing to have the same product many times
   for (let i = 0; i < cartArray.length; i++) {
     if (picture === cartArray[i].image) {
       cartArray.splice(i, 1);
     }
   }
+
+  // here we actually add and update and store the array in the right ways
   cartArray.push(posterObj);
+  updateWhatsInTheBag();
   localStorage.shopping = JSON.stringify(cartArray);
 }
+
+
+
+

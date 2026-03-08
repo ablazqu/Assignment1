@@ -8,7 +8,6 @@ body {
 }
 
 /* HEADER */
-
 header {
   grid-area: header;
   background-color: white;
@@ -16,7 +15,6 @@ header {
   position: sticky;
   top: 0;
 }
-
 ul {
   justify-content: center;
   gap: 80px;
@@ -28,12 +26,10 @@ ul {
 li {
   list-style: none;
 }
-
 .logo-position {
   display: flex;
   justify-self: center;
 }
-
 .roboto-shortcuts {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
@@ -42,7 +38,18 @@ li {
   font-variation-settings: "wdth" 100;
   font-size: 20px;
 }
-/* BODY */
+/* logo size */
+.logo {
+  width: 20vw;
+}
+
+/* shopping bag icon */
+.bag-icon {
+  width: 90%;
+  position: relative;
+}
+
+/* MAIN */
 h1 {
   text-align: center;
 }
@@ -62,7 +69,8 @@ h1 {
   color: rgb(62, 63, 63);
 }
 
-/* INDEX PAGE */
+
+/* ---- INDEX PAGE---- */
 .main-carrusel {
   justify-self: center;
   width: 50%;
@@ -105,7 +113,7 @@ ol {
   font-style: italic;
   color: rgb(22, 24, 24);
 }
-/* ALL PRODUCTS PAGE */
+/* ---- ALL PRODUCTS PAGE ---- */
 .collection {
   justify-content: center;
   display: grid;
@@ -113,7 +121,11 @@ ol {
   gap: 10px;
 }
 
-/* EACH PRODUCT PAGE */
+.poster {
+  width: 60%;
+}
+
+/* --- EACH PRODUCT PAGE --- */
 
 .price-page {
   display: flex;
@@ -134,11 +146,6 @@ input {
   width: 20%;
 }
 
-/* CONTACT PAGE */
-/*.form {
-  display: flexbox;
-  text-align: center;
-}*/
 .content-position {
   grid-area: main;
   justify-content: center;
@@ -162,7 +169,11 @@ input {
   text-align: left;
 }
 
-/* SHOPPING CART PAGE */
+.product1 {
+  width: 30%;
+}
+
+/* --- SHOPPING CART PAGE --- */
 .shop-info {
   display: grid;
   grid-template-columns:1fr 1fr 1fr 1fr ;
@@ -267,34 +278,26 @@ small {
   justify-content: center;
 }
 
-/* LOGO SIZE */
-.logo {
-  width: 20vw;
-}
-
-/* IMAGES SIZES */
-.poster {
-  width: 60%;
-}
-
-.product1 {
-  width: 30%;
-}
-
-/* SHOPPING CART ICON */
-.bag-icon {
-  width: 90%;
-}
-
-
 .bag-has-products{
-   font-family: "Roboto", sans-serif;
+font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100;
   font-size:small;
-  visibility: hidden; 
+  
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+
+  margin-left: 2%;
+  z-index: 99;
 }
 
 
@@ -573,3 +576,4 @@ small {
   background-color: rgb(192, 168, 131);
 }
    }
+  }

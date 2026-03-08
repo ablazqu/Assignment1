@@ -1,4 +1,4 @@
-/* DISPLAY OF HAMBURGER MENU */
+/* ---- DISPLAY OF HAMBURGER MENU ---- */
 const headingElement = document.querySelector(".menu-icon");
 const ul = document.querySelector(".links");
 
@@ -11,17 +11,15 @@ function displayBurgerMenu() {
     ul.style.display = "none";
   }
 }
-/* REFENCE CHATGPT AND YOUTUBE VIDEOS */
-/* https://chatgpt.com/c/69a18c6c-ba00-832b-bfcb-efa62e87b1c5
- https://www.youtube.com/watch?v=pBv7igaxfQE
- https://www.youtube.com/watch?v=aNDqzlAKmZc */
+/* REFENCE:  chat gpt & youtube videos 
+ - https://chatgpt.com/c/69a18c6c-ba00-832b-bfcb-efa62e87b1c5
+ - https://www.youtube.com/watch?v=pBv7igaxfQE
+ - https://www.youtube.com/watch?v=aNDqzlAKmZc */
 
-/* DISPLAY FOR THE CONTACT BUTTON */
+ /* --- DISPLAY FOR THE CONTACT BUTTON --- */
 const button = document.querySelector(".show-contact");
 const p = document.querySelector(".email");
-
 p.style.display = "none";
-
 button.addEventListener("click", showEmail);
 function showEmail() {
   if (p.style.display === "none") {
@@ -31,24 +29,22 @@ function showEmail() {
   }
 }
 
-/* making the products to appear in the shopping cart */
+/* --- MAKING THE PRODUCTS TO APPEAR IN THE SHOPPING CART --- */
 
-const shopGrid = document.querySelector(".shopping-products");
+const shopGrid = document.querySelector(".shopping-products"); // we create the grid where the products would be appearing
 
-let cartArray = JSON.parse(localStorage.getItem("shopping")) || [];
+let cartArray = JSON.parse(localStorage.getItem("shopping")) || []; //we get the item from the array according with the array created in script
 
-let finalPrice = 0;
+let finalPrice = 0; //if there is no products inside te cart then the price would be 0
 
-/* Show a message of "empty cart" when there's no products */
-
+// Show a message of "empty cart" when there's no products 
 let emptyCart = document.createElement("h4");
 emptyCart.textContent = "THIS IS EMPTY!";
 if (cartArray.length !== 0) {
-  emptyCart.style.display = "none";
-}
+  emptyCart.style.display = "none";}
 shopGrid.appendChild(emptyCart);
 
-
+//if we click the button for "check out" the cart would be empty (in a real ecommerce people would get to the page for paying)
  const soldOut= document.querySelector("#check-out");
  soldOut.addEventListener("click", checkOut);
  function checkOut(){
@@ -58,8 +54,7 @@ shopGrid.appendChild(emptyCart);
  }
 
 
-/* loop for when we add products to the cart */
-
+//loop for when we add products to the cart 
 for (let i = 0; i < cartArray.length; i++) {
   /* for the image to appear */
   let buyProduct = document.createElement("img");
@@ -90,6 +85,7 @@ for (let i = 0; i < cartArray.length; i++) {
   removeButton.style.color = "#b10000";
   removeButton.style.background = "none";
   removeButton.style.border = "none";
+  removeButton.style.fontWeight="900";
   removeButton.addEventListener("click", deleteProduct);
 
   /* this would make it possible to delete items that we don't want anymore inside the cart */
@@ -99,33 +95,18 @@ for (let i = 0; i < cartArray.length; i++) {
     location.reload(); /* this make it possible to update the page instantly */
   }
 
-  /* make them happen in the page */
+  /* make the button, products and info appear in the page */
   shopGrid.appendChild(removeButton);
   shopGrid.appendChild(buyProduct);
   shopGrid.appendChild(productInfo);
   shopGrid.appendChild(copieAmount);
   shopGrid.appendChild(amountPrice);
+  updateWhatsInTheBag();
 }
 
+/* this would show the final price at the bottom of the list */
 const totalPrice = document.querySelector(".total-price");
 totalPrice.innerText = finalPrice + "SEK";
-
-/* for when we have thing inside de cart */
-
-// we want to show a message of "added to cart" when we add products.
-//we want the bag-icon to change when cartArray.length is not 0
-
-/*
-const whatsInTheBag = document.querySelector(".bag-has-products");
-let bagIcon = document.createElement("");
-bagIcon.textContent = 0;
-
-if (cartArray.length !== 0) {
-  bagIcon.style.visibility = "visible";
-}
-*/
-
-/*whatsInTheBag.appendChild(bagIcon);*/
 
 /* reference for make it possible 
 https://chatgpt.com/c/69a83d7f-f540-832a-bb95-817cdb2929d6
