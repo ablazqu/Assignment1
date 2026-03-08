@@ -135,19 +135,13 @@ input {
 }
 
 /* CONTACT PAGE */
-.form {
+/*.form {
   display: flexbox;
   text-align: center;
-}
+}*/
 .content-position {
   grid-area: main;
   justify-content: center;
-}
-
-.button {
-  display: flex;
-  justify-self: center;
-  margin-top: 5px;
 }
 
 .quicksand-txt-price {
@@ -182,7 +176,6 @@ input {
 }
 .shopping-products {
   display: grid;
- /* grid-template-columns:1fr 1fr 1fr 1fr 1fr;*/
   grid-template-columns: 1px 120px 120px 120px 120px;
   align-items: center;
   justify-content: space-evenly;
@@ -215,17 +208,53 @@ h4{
   font-size: larger;
 }
 
-#chek-out{
+/* added to cart message */
+.added-message{
+  height: 80px;
+  width: 100px;
+  margin-left: 150px;
+  border-radius: 50%;
+}
+h6{
+  display: grid;
+  grid-column: 4 / 5 ;
+  justify-content: center;
+  font-size: large;
+  background-color: rgb(220, 110, 110); 
+  color: rgb(224, 212, 212);
+  border-radius: 10%;
+
+  font-family: "Quicksand", sans-serif;
+  font-size: medium;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(217, 169, 169);
+  text-align: center
+
+  }
+
+#check-out{
+  display: flex;
+  justify-content: center;
+  margin-left: 25rem;
+  border-radius: 5%;
   font-size: larger;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: large;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(205, 130, 10);
+  border: none;
+  background-color: rgb(192, 168, 131);
+}
+
+button{
+  font-size: medium;
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: large;
   font-weight: 300;
   font-style: normal;
   color: rgb(18, 18, 18);
-}
-
-button{
-  text-align: center;
 }
 /* FOOTER */
 footer {
@@ -256,6 +285,18 @@ small {
 .bag-icon {
   width: 90%;
 }
+
+
+.bag-has-products{
+   font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size:small;
+  visibility: hidden; 
+}
+
 
 /* RESPONSIVE */
 
@@ -383,6 +424,21 @@ small {
   color: rgb(22, 24, 24);
   text-align: center;
 }
+
+  #check-out{
+  display: flex;
+  justify-content: center;
+  margin-left: 5rem;
+  border-radius: 5%;
+  font-size: larger;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: large;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(205, 130, 10);
+  border: none;
+  background-color: rgb(192, 168, 131);
+
 }
 
 @media screen and (min-width: 600px) and (max-width: 900px) {
@@ -500,4 +556,20 @@ small {
   font-style: normal;
   color: rgb(22, 24, 24);
   text-align: center;
+   }
+
+  #check-out{
+  display: flex;
+  justify-content: center;
+  margin-left: 5rem;
+  border-radius: 5%;
+  font-size: larger;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: large;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(205, 130, 10);
+  border: none;
+  background-color: rgb(192, 168, 131);
 }
+   }

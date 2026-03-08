@@ -1,8 +1,8 @@
 /* DISPLAY OF HAMBURGER MENU */
-const headingElement = document.querySelector(".menu-icon");
+const hambugerMenu = document.querySelector(".menu-icon");
 const ul = document.querySelector(".links");
 
-headingElement.addEventListener("click", displayBurgerMenu);
+hambugerMenu.addEventListener("click", displayBurgerMenu);
 
 function displayBurgerMenu() {
   if (ul.style.display === "none") {
@@ -92,15 +92,23 @@ for (let i = 0; i < buyButton.length; i++) {
 }
 /* creating the function so it works */
 function addToCart(event) {
+
+  /* showing "ADDED TO CART" eveytime we add a new product*/
+  let message =document.createElement("h6"); 
+  message.innerText = "ADDED TO CART";
+  let showIt = document.querySelector(".added-message");
+  setTimeout(messageGone, 2000);
+  function messageGone() {
+    message.remove();
+  }
+  showIt.appendChild(message); //the message would appear for 2 seconds
+  
+/* here we are telling which and from where we want the information */
   const button = event.target;
-  const product = button.closest(".price-page");
+  const product = button.closest(".price-page"); // it will go to the closest ".price-page", so we get the right info
 
   const picture = product.querySelector(".product1").src; /* image */
-  const price = parseInt(
-    document
-      .querySelector(".quicksand-txt-price")
-      .innerText.replace(" SEK", ""),
-  ); /* price */
+  const price = parseInt(document.querySelector(".quicksand-txt-price").innerText.replace(" SEK", "")); /* price */
   const copies = parseInt(document.querySelector(".amount").value); /* amount */
 
   /* creating the object with the product info */
