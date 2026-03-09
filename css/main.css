@@ -419,7 +419,7 @@ font-family: "Roboto", sans-serif;
   top: 25%;
   right: -1%;
   z-index: 99;
-}
+ }
 
   /* INDEX */
 
@@ -579,7 +579,7 @@ font-family: "Roboto", sans-serif;
   top: 12%;
   right: -1%;
   z-index: 99;
-}
+ }
 
   /* INDEX */
 
@@ -616,19 +616,19 @@ font-family: "Roboto", sans-serif;
     justify-content: center;
     align-items: center;
     /*gap: 5rem;*/
-    width: 50%;
-    margin-left: 25%;
+    width: 30%;
+    margin-left: 30%;
   }
 
   .product1 {
     width: 100%;
   }
 
-  .price-info .lexend-titles {
-    font-size: 30px;
+  .price-info .titles {
+    font-size: 20px;
   }
   .price-info .quicksand-txt-price {
-    font-size: larger;
+    font-size: large;
   }
   .price-info .quicksand-txt-info {
     font-size: smaller;
