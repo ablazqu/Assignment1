@@ -5,6 +5,7 @@ body {
     "header header header"
     ". main . "
     "footer footer footer";
+   /* background-color: rgb(241, 234, 224);*/
 }
 
 /* HEADER */
@@ -15,6 +16,7 @@ header {
   position: sticky;
   top: 0;
 }
+
 ul {
   justify-content: center;
   gap: 80px;
@@ -46,7 +48,7 @@ li {
 /* shopping bag icon */
 .bag-icon {
   width: 90%;
-  position: relative;
+ /* position: relative;*/
 }
 
 /* MAIN */
@@ -55,10 +57,16 @@ h1 {
 }
 
 .lexend-titles {
-  font-family: "Lexend", sans-serif;
+   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+.titles{
+font-family: "Chango", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(27, 28, 28);
 }
 
 .quicksand-txt {
@@ -66,7 +74,7 @@ h1 {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  color: rgb(62, 63, 63);
+  color: rgb(62, 63, 63);*/
 }
 
 
@@ -141,7 +149,36 @@ ol {
   display: flex;
   width: 100%;
 }
-
+.increase-button{
+border: none;
+  background-color:  rgb(240, 220, 155) ;
+   font-family: "Quicksand", sans-serif;
+  font-size: large;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(202, 155, 0);
+  text-align: left;
+}
+.reduce-button{
+  border: none;
+  background-color:  rgb(240, 220, 155) ;
+  font-family: "Quicksand", sans-serif;
+  font-size: large;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(202, 155, 0);
+  text-align: left;
+}
+.buy-button{
+  border:none ;
+  background-color:  rgb(155, 206, 239) ;
+   font-family: "Quicksand", sans-serif;
+  font-size: large;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(70, 119, 151);
+  text-align: left;
+}
 input {
   width: 20%;
 }
@@ -154,7 +191,7 @@ input {
 .quicksand-txt-price {
   font-family: "Quicksand", sans-serif;
   font-size: xx-large;
-  font-weight: 300;
+  font-weight: 600;
   font-style: normal;
   color: olive;
   text-align: center;
@@ -300,18 +337,19 @@ font-family: "Roboto", sans-serif;
   z-index: 99;
 }
 
-
-/* RESPONSIVE */
-
 .mobile-navigation {
   display: none;
 }
 
+
+/* RESPONSIVE */
 @media screen and (min-width: 300px) and (max-width: 600px) {
   /* HEADER FOR DIFFERENT SCREEN'S SIZE */
   .mobile-navigation {
     display: flex;
-    justify-content: first baseline;
+    justify-content: space-evenly;
+    align-items: center;
+    /*width: 100%;*/
     margin: 0;
     padding: 0;
     gap: 0;
@@ -331,13 +369,15 @@ font-family: "Roboto", sans-serif;
   }
   .logo-plus-bagIcon {
     display: flex;
+    align-items: center;
     gap: 5rem;
+    position: relative;
   }
 
   ul {
     text-align: left;
     justify-content: center;
-    gap: 5px;
+    gap: 8px;
     list-style: none;
     display: none;
     flex-direction: column;
@@ -357,6 +397,29 @@ font-family: "Roboto", sans-serif;
   .laptop-navigation {
     display: none;
   }
+
+  .bag-has-products{
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size:small;
+  
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+
+  top: 25%;
+  right: -1%;
+  z-index: 99;
+}
 
   /* INDEX */
 
@@ -383,24 +446,25 @@ font-family: "Roboto", sans-serif;
   .poster {
     display: flex;
     justify-content: center;
-    width: 110%;
-  }
-
-  .price-page {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /*gap: 5rem;*/
-    width: 50%;
-    margin-left: 20%;
-  }
-
-  .product1 {
     width: 100%;
   }
 
-  .price-info .lexend-titles {
+  .price-page {    
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap:0;
+  }
+
+  .product1 {
+    width: 30%;
+    margin-left: 2%;
+  }
+
+  .price-info .titles {
     font-size: large;
   }
   .price-info .quicksand-txt-price {
@@ -410,7 +474,8 @@ font-family: "Roboto", sans-serif;
     font-size: smaller;
   }
   .shopping-buttons {
-    width: 200%;
+    width: 100%;
+    gap: 5px;
   }
 
 
@@ -426,8 +491,7 @@ font-family: "Roboto", sans-serif;
   font-style: normal;
   color: rgb(22, 24, 24);
   text-align: center;
-}
-
+ }
   #check-out{
   display: flex;
   justify-content: center;
@@ -441,11 +505,14 @@ font-family: "Roboto", sans-serif;
   color: rgb(205, 130, 10);
   border: none;
   background-color: rgb(192, 168, 131);
-
+ }
 }
 
 @media screen and (min-width: 600px) and (max-width: 900px) {
   /* HEADER FOR DIFFERENT SCREEN'S SIZE */
+    .laptop-navigation {
+    display: none;
+  }
   .mobile-navigation {
     display: flex;
     justify-content: first baseline;
@@ -474,10 +541,12 @@ font-family: "Roboto", sans-serif;
     display: flex;
     justify-self: end;
     width: 100%;
+    /*top: 15%;*/
   }
   .logo-plus-bagIcon {
     display: flex;
-    gap: 10rem;
+   gap: 10rem;
+    position: relative;
   }
 
   ul {
@@ -490,10 +559,27 @@ font-family: "Roboto", sans-serif;
     padding: 0%;
     margin-left: 15%;
   }
-
-  .laptop-navigation {
-    display: none;
-  }
+  
+  .bag-has-products{
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size:small;  
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 12%;
+  right: -1%;
+  z-index: 99;
+}
 
   /* INDEX */
 
@@ -508,6 +594,7 @@ font-family: "Roboto", sans-serif;
     width: 100%;
     padding: 10px;
   }
+
 
   /* PRODUCTS AND SHOPPING PAGES */
 
@@ -530,7 +617,7 @@ font-family: "Roboto", sans-serif;
     align-items: center;
     /*gap: 5rem;*/
     width: 50%;
-    margin-left: 20%;
+    margin-left: 25%;
   }
 
   .product1 {
@@ -574,6 +661,5 @@ font-family: "Roboto", sans-serif;
   color: rgb(205, 130, 10);
   border: none;
   background-color: rgb(192, 168, 131);
-}
-   }
   }
+}

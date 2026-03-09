@@ -101,7 +101,7 @@ for (let i = 0; i < cartArray.length; i++) {
   shopGrid.appendChild(productInfo);
   shopGrid.appendChild(copieAmount);
   shopGrid.appendChild(amountPrice);
-  updateWhatsInTheBag();
+  /*updateWhatsInTheBag();*/
 }
 
 /* this would show the final price at the bottom of the list */

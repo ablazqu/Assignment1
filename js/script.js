@@ -46,7 +46,6 @@ function increaseCopies() {
 /* REFERENCE: chat gpt help
  https://chatgpt.com/c/69a2d1a7-16a0-8393-a7fc-640a1180baf1 */
 
-
 /* --- CREATING THE NEEDED SO POSTERS WOULD APPEAR IN THE SHOPPING CART --- */
 // create an empty array where product would be storage
 let cartArray;
@@ -63,14 +62,14 @@ updateWhatsInTheBag();
 const buyButton = document.querySelectorAll(".buy-button");
 
 // for when we have thing inside de cart (the icon show how many items we have inside)
-function updateWhatsInTheBag(){
- const whatsInTheBag=document.querySelector(".bag-has-products");
-whatsInTheBag.textContent = cartArray.length
-if (cartArray.length > 0) {
-   whatsInTheBag.style.display="flex";
-}else{
- whatsInTheBag.style.display="none";
-}
+function updateWhatsInTheBag() {
+  const whatsInTheBag = document.querySelector(".bag-has-products");
+  whatsInTheBag.textContent = cartArray.length;
+  if (cartArray.length > 0) {
+    whatsInTheBag.style.display = "flex";
+  } else {
+    whatsInTheBag.style.display = "none";
+  }
 }
 
 /* REFERENCE: chat gpt help
@@ -83,9 +82,8 @@ for (let i = 0; i < buyButton.length; i++) {
 
 // creating the function so it works
 function addToCart(event) {
-
   // showing "ADDED TO CART" eveytime we add a new product
-  let message =document.createElement("h6"); 
+  let message = document.createElement("h6");
   message.innerText = "ADDED TO CART";
   let showIt = document.querySelector(".added-message");
   setTimeout(messageGone, 2000);
@@ -93,22 +91,25 @@ function addToCart(event) {
     message.remove();
   }
   showIt.appendChild(message);
-  
- // here we are telling which and from where we want the information
+
+  // here we are telling which and from where we want the information
   const button = event.target;
   const product = button.closest(".price-page"); // it will go to the closest ".price-page", so we get the right info
-  const picture = product.querySelector(".product1").src; // image 
-  const price = parseInt(document.querySelector(".quicksand-txt-price").innerText.replace(" SEK", "")); // price
-  const copies = parseInt(document.querySelector(".amount").value); // amount 
+  const picture = product.querySelector(".product1").src; // image
+  const price = parseInt(
+    document
+      .querySelector(".quicksand-txt-price")
+      .innerText.replace(" SEK", ""),
+  ); // price
+  const copies = parseInt(document.querySelector(".amount").value); // amount
 
- //creating the object with the product info 
+  //creating the object with the product info
   let posterObj = {
     image: picture,
     price: price,
     amount: copies,
   };
 
-  // preventing to have the same product many times
   for (let i = 0; i < cartArray.length; i++) {
     if (picture === cartArray[i].image) {
       cartArray.splice(i, 1);
@@ -120,7 +121,3 @@ function addToCart(event) {
   updateWhatsInTheBag();
   localStorage.shopping = JSON.stringify(cartArray);
 }
-
-
-
-
