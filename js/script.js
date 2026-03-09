@@ -57,6 +57,7 @@ if (localStorage.shopping) {
   cartArray = [];
 }
 updateWhatsInTheBag();
+updateWhatsInTheBagMobile();
 
 // making the "add to cart" button clickable
 const buyButton = document.querySelectorAll(".buy-button");
@@ -71,6 +72,16 @@ function updateWhatsInTheBag() {
     whatsInTheBag.style.display = "none";
   }
 }
+ // mobile version
+function updateWhatsInTheBagMobile() {
+  const whatsInTheBag = document.querySelector(".bag-with-products");
+  whatsInTheBag.textContent = cartArray.length;
+  if (cartArray.length > 0) {
+    whatsInTheBag.style.display = "flex";
+  } else {
+    whatsInTheBag.style.display = "none";
+  }
+} 
 
 /* REFERENCE: chat gpt help
 https://chatgpt.com/c/69ab4b1f-cb34-832a-8844-62f8df1d7c75 */
@@ -109,7 +120,8 @@ function addToCart(event) {
     price: price,
     amount: copies,
   };
-
+ 
+  // avoid duplicate products
   for (let i = 0; i < cartArray.length; i++) {
     if (picture === cartArray[i].image) {
       cartArray.splice(i, 1);
@@ -119,5 +131,6 @@ function addToCart(event) {
   // here we actually add and update and store the array in the right ways
   cartArray.push(posterObj);
   updateWhatsInTheBag();
+  updateWhatsInTheBagMobile();
   localStorage.shopping = JSON.stringify(cartArray);
 }

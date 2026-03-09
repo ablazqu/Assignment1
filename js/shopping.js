@@ -29,6 +29,8 @@ function showEmail() {
   }
 }
 
+
+
 /* --- MAKING THE PRODUCTS TO APPEAR IN THE SHOPPING CART --- */
 
 const shopGrid = document.querySelector(".shopping-products"); // we create the grid where the products would be appearing
@@ -53,6 +55,29 @@ shopGrid.appendChild(emptyCart);
     location.reload();
  }
 
+// badge for laptop
+function updateWhatsInTheBag() {
+  const whatsInTheBag = document.querySelector(".bag-has-products");
+  whatsInTheBag.textContent = cartArray.length;
+  if (cartArray.length > 0) {
+    whatsInTheBag.style.display = "flex";
+  } else {
+    whatsInTheBag.style.display = "none";
+  }
+} 
+updateWhatsInTheBag();
+
+// badge for mobile
+function updateWhatsInTheBagMobile() {
+  const whatsInTheBag = document.querySelector(".bag-with-products");
+  whatsInTheBag.textContent = cartArray.length;
+  if (cartArray.length > 0) {
+    whatsInTheBag.style.display = "flex";
+  } else {
+    whatsInTheBag.style.display = "none";
+  }
+} 
+updateWhatsInTheBagMobile();
 
 //loop for when we add products to the cart 
 for (let i = 0; i < cartArray.length; i++) {
@@ -101,8 +126,8 @@ for (let i = 0; i < cartArray.length; i++) {
   shopGrid.appendChild(productInfo);
   shopGrid.appendChild(copieAmount);
   shopGrid.appendChild(amountPrice);
-  /*updateWhatsInTheBag();*/
-}
+  updateWhatsInTheBag();
+ }
 
 /* this would show the final price at the bottom of the list */
 const totalPrice = document.querySelector(".total-price");
@@ -111,3 +136,8 @@ totalPrice.innerText = finalPrice + "SEK";
 /* reference for make it possible 
 https://chatgpt.com/c/69a83d7f-f540-832a-bb95-817cdb2929d6
 */
+
+
+
+
+

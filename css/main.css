@@ -5,7 +5,7 @@ body {
     "header header header"
     ". main . "
     "footer footer footer";
-   /* background-color: rgb(241, 234, 224);*/
+  /* background-color: rgb(241, 234, 224);*/
 }
 
 /* HEADER */
@@ -48,7 +48,7 @@ li {
 /* shopping bag icon */
 .bag-icon {
   width: 90%;
- /* position: relative;*/
+  /* position: relative;*/
 }
 
 /* MAIN */
@@ -57,13 +57,13 @@ h1 {
 }
 
 .lexend-titles {
-   font-family: "Lexend", sans-serif;
+  font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
-.titles{
-font-family: "Chango", sans-serif;
+.titles {
+  font-family: "Chango", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: rgb(27, 28, 28);
@@ -74,9 +74,8 @@ font-family: "Chango", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  color: rgb(62, 63, 63);*/
+  color: rgb(62, 63, 63);
 }
-
 
 /* ---- INDEX PAGE---- */
 .main-carrusel {
@@ -149,19 +148,9 @@ ol {
   display: flex;
   width: 100%;
 }
-.increase-button{
-border: none;
-  background-color:  rgb(240, 220, 155) ;
-   font-family: "Quicksand", sans-serif;
-  font-size: large;
-  font-weight: 600;
-  font-style: normal;
-  color: rgb(202, 155, 0);
-  text-align: left;
-}
-.reduce-button{
+.increase-button {
   border: none;
-  background-color:  rgb(240, 220, 155) ;
+  background-color: rgb(240, 220, 155);
   font-family: "Quicksand", sans-serif;
   font-size: large;
   font-weight: 600;
@@ -169,10 +158,20 @@ border: none;
   color: rgb(202, 155, 0);
   text-align: left;
 }
-.buy-button{
-  border:none ;
-  background-color:  rgb(155, 206, 239) ;
-   font-family: "Quicksand", sans-serif;
+.reduce-button {
+  border: none;
+  background-color: rgb(240, 220, 155);
+  font-family: "Quicksand", sans-serif;
+  font-size: large;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(202, 155, 0);
+  text-align: left;
+}
+.buy-button {
+  border: none;
+  background-color: rgb(155, 206, 239);
+  font-family: "Quicksand", sans-serif;
   font-size: large;
   font-weight: 600;
   font-style: normal;
@@ -213,14 +212,13 @@ input {
 /* --- SHOPPING CART PAGE --- */
 .shop-info {
   display: grid;
-  grid-template-columns:1fr 1fr 1fr 1fr ;
-    font-family: "Quicksand", sans-serif;
-  font-size:large;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  font-family: "Quicksand", sans-serif;
+  font-size: large;
   font-weight: 300;
   font-style: normal;
   color: rgb(22, 24, 24);
   text-align: center;
-
 }
 .shopping-products {
   display: grid;
@@ -237,38 +235,38 @@ input {
 .final-price {
   display: flex;
   justify-content: center;
-  gap: 30px;  
+  gap: 30px;
   align-items: center;
 }
 
-.total-price{
-    font-family: "Quicksand", sans-serif;
+.total-price {
+  font-family: "Quicksand", sans-serif;
   font-optical-sizing: large;
   font-weight: 300;
   font-style: normal;
   color: rgb(18, 18, 18);
 }
 
-h4{
+h4 {
   display: grid;
-  grid-column: 3 / 5 ;
+  grid-column: 3 / 5;
   justify-content: center;
   font-size: larger;
 }
 
 /* added to cart message */
-.added-message{
+.added-message {
   height: 80px;
   width: 100px;
   margin-left: 150px;
   border-radius: 50%;
 }
-h6{
+h6 {
   display: grid;
-  grid-column: 4 / 5 ;
+  grid-column: 4 / 5;
   justify-content: center;
   font-size: large;
-  background-color: rgb(220, 110, 110); 
+  background-color: rgb(220, 110, 110);
   color: rgb(224, 212, 212);
   border-radius: 10%;
 
@@ -277,11 +275,10 @@ h6{
   font-weight: 600;
   font-style: normal;
   color: rgb(217, 169, 169);
-  text-align: center
+  text-align: center;
+}
 
-  }
-
-#check-out{
+#check-out {
   display: flex;
   justify-content: center;
   margin-left: 25rem;
@@ -296,7 +293,7 @@ h6{
   background-color: rgb(192, 168, 131);
 }
 
-button{
+button {
   font-size: medium;
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: large;
@@ -315,14 +312,15 @@ small {
   justify-content: center;
 }
 
-.bag-has-products{
-font-family: "Roboto", sans-serif;
+.bag-has-products {
+  display: none;
+  font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100;
-  font-size:small;
-  
+  font-size: small;
+
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -341,7 +339,6 @@ font-family: "Roboto", sans-serif;
   display: none;
 }
 
-
 /* RESPONSIVE */
 @media screen and (min-width: 300px) and (max-width: 600px) {
   /* HEADER FOR DIFFERENT SCREEN'S SIZE */
@@ -349,7 +346,6 @@ font-family: "Roboto", sans-serif;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    /*width: 100%;*/
     margin: 0;
     padding: 0;
     gap: 0;
@@ -385,41 +381,40 @@ font-family: "Roboto", sans-serif;
     margin-left: 15%;
   }
 
-  .roboto-shortcuts{
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-  font-size:small;
+  .roboto-shortcuts {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: small;
   }
 
   .laptop-navigation {
     display: none;
   }
 
-  .bag-has-products{
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-  font-size:small;
+  .bag-with-products {
   
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgb(255, 0, 0);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-
-  top: 25%;
-  right: -1%;
-  z-index: 99;
- }
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: smaller;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(255, 0, 0);
+    color: white;
+  
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 25%;
+    right: -1%;
+    z-index: 99;
+  }
 
   /* INDEX */
 
@@ -449,14 +444,14 @@ font-family: "Roboto", sans-serif;
     width: 100%;
   }
 
-  .price-page {    
+  .price-page {
     margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap:0;
+    gap: 0;
   }
 
   .product1 {
@@ -478,39 +473,38 @@ font-family: "Roboto", sans-serif;
     gap: 5px;
   }
 
-
   /* CART PAGE*/
   .shopping-products {
-  display: grid;
-  grid-template-columns: 30px 60px 100px 50px 60px;
-  align-items: center;
-  justify-content: space-evenly;
-  font-family: "Quicksand", sans-serif;
-  font-size: large;
-  font-weight: 300;
-  font-style: normal;
-  color: rgb(22, 24, 24);
-  text-align: center;
- }
-  #check-out{
-  display: flex;
-  justify-content: center;
-  margin-left: 5rem;
-  border-radius: 5%;
-  font-size: larger;
-  font-family: "Quicksand", sans-serif;
-  font-optical-sizing: large;
-  font-weight: 600;
-  font-style: normal;
-  color: rgb(205, 130, 10);
-  border: none;
-  background-color: rgb(192, 168, 131);
- }
+    display: grid;
+    grid-template-columns: 30px 60px 100px 50px 60px;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: "Quicksand", sans-serif;
+    font-size: large;
+    font-weight: 300;
+    font-style: normal;
+    color: rgb(22, 24, 24);
+    text-align: center;
+  }
+  #check-out {
+    display: flex;
+    justify-content: center;
+    margin-left: 5rem;
+    border-radius: 5%;
+    font-size: larger;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: large;
+    font-weight: 600;
+    font-style: normal;
+    color: rgb(205, 130, 10);
+    border: none;
+    background-color: rgb(192, 168, 131);
+  }
 }
 
 @media screen and (min-width: 600px) and (max-width: 900px) {
   /* HEADER FOR DIFFERENT SCREEN'S SIZE */
-    .laptop-navigation {
+  .laptop-navigation {
     display: none;
   }
   .mobile-navigation {
@@ -521,13 +515,13 @@ font-family: "Roboto", sans-serif;
     gap: 0;
   }
 
-  .roboto-shortcuts{
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-  font-size:medium;
+  .roboto-shortcuts {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: medium;
   }
 
   .hamburger-menu {
@@ -545,7 +539,7 @@ font-family: "Roboto", sans-serif;
   }
   .logo-plus-bagIcon {
     display: flex;
-   gap: 10rem;
+    gap: 10rem;
     position: relative;
   }
 
@@ -559,27 +553,26 @@ font-family: "Roboto", sans-serif;
     padding: 0%;
     margin-left: 15%;
   }
-  
-  .bag-has-products{
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-  font-size:small;  
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgb(255, 0, 0);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 12%;
-  right: -1%;
-  z-index: 99;
- }
+
+  .bag-with-products {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: smaller;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(255, 0, 0);
+    color: white; 
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 12%;
+    right: -1%;
+    z-index: 99;
+  }
 
   /* INDEX */
 
@@ -594,7 +587,6 @@ font-family: "Roboto", sans-serif;
     width: 100%;
     padding: 10px;
   }
-
 
   /* PRODUCTS AND SHOPPING PAGES */
 
@@ -635,31 +627,31 @@ font-family: "Roboto", sans-serif;
   }
 
   /* CART PAGE */
-   .shopping-products {
-  display: grid;
-  grid-template-columns: 30px 60px 100px 50px 60px;
-  align-items: center;
-  justify-content: space-evenly;
-  font-family: "Quicksand", sans-serif;
-  font-size: large;
-  font-weight: 300;
-  font-style: normal;
-  color: rgb(22, 24, 24);
-  text-align: center;
-   }
+  .shopping-products {
+    display: grid;
+    grid-template-columns: 30px 60px 100px 50px 60px;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: "Quicksand", sans-serif;
+    font-size: large;
+    font-weight: 300;
+    font-style: normal;
+    color: rgb(22, 24, 24);
+    text-align: center;
+  }
 
-  #check-out{
-  display: flex;
-  justify-content: center;
-  margin-left: 5rem;
-  border-radius: 5%;
-  font-size: larger;
-  font-family: "Quicksand", sans-serif;
-  font-optical-sizing: large;
-  font-weight: 600;
-  font-style: normal;
-  color: rgb(205, 130, 10);
-  border: none;
-  background-color: rgb(192, 168, 131);
+  #check-out {
+    display: flex;
+    justify-content: center;
+    margin-left: 5rem;
+    border-radius: 5%;
+    font-size: larger;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: large;
+    font-weight: 600;
+    font-style: normal;
+    color: rgb(205, 130, 10);
+    border: none;
+    background-color: rgb(192, 168, 131);
   }
 }
